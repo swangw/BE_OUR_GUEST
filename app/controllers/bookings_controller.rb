@@ -11,12 +11,18 @@ class BookingsController < ApplicationController
 
   def create
     @space = Space.find(params[:space_id])
-    raise
+
     @booking = Booking.new(booking_params)
     @booking.space = @space
 
     @booking.save
 
 
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit()
   end
 end

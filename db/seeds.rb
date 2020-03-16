@@ -13,19 +13,20 @@ Space.destroy_all
 
 5.times do
   host = Host.new(
-    email:
-    password: 12345
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 123456
     )
-  5.times do
-  space = Space.new(
-    name: Faker::Company.name,
-    address: Faker::Address.street_address,
-    price_per_hour: rand(10..15),
-    outlets: rand(5..10),
-    capacity: rand(15..20)
-  )
-  space.save!
-  host.spaces << space
   host.save!
+  5.times do
+    space = Space.new(
+      name: Faker::Company.name,
+      address: Faker::Address.street_address,
+      price_per_hour: rand(10..15),
+      outlets: rand(5..10),
+      capacity: rand(15..20)
+    )
+    space.host = host
+    space.save!
   end
 end

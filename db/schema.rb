@@ -10,9 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_03_16_073304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "client_name"
+    t.string "client_email"
+    t.bigint "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_bookings_on_space_id"
+  end
+
+  create_table "hosts", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_hosts_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_hosts_on_reset_password_token", unique: true
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "price_per_hour"
+    t.integer "outlets"
+    t.integer "capacity"
+    t.string "cozy"
+    t.string "quiet"
+    t.string "natural_lighting"
+    t.string "comfortable_seats"
+    t.string "good_coffee"
+    t.string "strong_aircon"
+    t.string "food_available"
+    t.string "drinks_available"
+    t.bigint "host_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_id"], name: "index_spaces_on_host_id"
+  end
+
+  add_foreign_key "bookings", "spaces"
+  add_foreign_key "spaces", "hosts"
 end

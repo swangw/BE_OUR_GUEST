@@ -1,0 +1,17 @@
+<div class="cards">
+  <% spaces.each do |space| %>
+    <div class="card-space">
+      <img src='https://source.unsplash.com/1600x900/?hotel-lounge <%= space.id %>' class="card-img-top" alt="hotel-lounge">
+      <div class="card-body">
+        <h5 class="card-title"><%= space.name %></h5>
+        <p class="card-text"><%= space.address %></p>
+        <p class="card-text font-weight-bold">$<%= space.price_per_hour %>/hour</p>
+        <% if host %>
+          <%= link_to "Edit this space", edit_host_space_path(host, space), class: "btn btn-ghost mt-3" %>
+        <% else %>
+          <%= link_to "Book this space", space_path(space), class: "btn btn-ghost mt-3" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

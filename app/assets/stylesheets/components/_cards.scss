@@ -11,6 +11,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin-bottom: 8px;
+  position: relative;
+}
+
+.btn-delete {
+  font-size: 32px;
+  color: #FFFFFF;
+  top: 12px;
+  right: 12px;
+  position: absolute;
 }
 
 .card-space > img {

@@ -46,6 +46,16 @@ class SpacesController < ApplicationController
     end
   end
 
+  def destroy
+    @host = Host.find(params[:host_id])
+    @space = Space.find(params[:id])
+    @space.destroy
+
+    redirect_to host_spaces_path(@host)
+  end
+
+  private
+
   def space_params
     params.require(:space).permit(:name, :address, :price_per_hour, :outlets, :capacity)
   end

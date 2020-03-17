@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Be our guest</h1>
+    <p>Coworking is the best thing since sliced bread</p>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <h2>Places to work around Singapore</h2>
+
+    <div class="d-flex">
+      <% @spaces.each do |space| %>
+        <div class="card-space">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-space-infos">
+            <h3><%= space.name %></h4>
+            <p>$<%= space.price_per_hour %>/hour</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+</div>
+
+
+

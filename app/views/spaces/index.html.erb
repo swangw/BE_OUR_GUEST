@@ -4,21 +4,18 @@
   </div>
 </div>
 
-<div class="container mt-3">
-  <h2>Places to work around Singapore</h2>
+<h2>Places to work around Singapore</h2>
 
-    <div class="d-flex">
+  <div class="card">
       <% @spaces.each do |space| %>
-        <div class="card-space">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-space-infos">
-            <h3><%= space.name %></h4>
-            <p>$<%= space.price_per_hour %>/hour</p>
+        <div class="card-space" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1536569912818-79b46faad219?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= space.name %></h5>
+            <p class="card-text"><%= space.address %></p>
+            <p class="card-text">$<%= space.price_per_hour %>/hour</p>
+            <a href="#" class="btn btn-primary">Book this space</a>
           </div>
         </div>
       <% end %>
-    </div>
-</div>
-
-
-
+  </div>

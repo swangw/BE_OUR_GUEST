@@ -1,6 +1,11 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.all
+    if params[:host_id]
+      @host = Host.find(params[:host_id])
+      @spaces = @host.spaces
+    else
+      @spaces = Space.all
+    end
   end
 
   def show
@@ -19,7 +24,7 @@ class SpacesController < ApplicationController
     @space.host = @host
 
     if @space.save
-      redirect_to root_path
+      redirect_to host_spaces_path
     else
       render :new
     end

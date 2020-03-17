@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :space
-  belongs_to :host
+  validates :client_name, :client_email, :start_time, :end_time, presence: true
+
 end

@@ -24,7 +24,7 @@ class SpacesController < ApplicationController
     @space.host = @host
 
     if @space.save
-      redirect_to host_spaces_path
+      redirect_to host_spaces_path(@host)
     else
       render :new
     end
@@ -37,13 +37,12 @@ class SpacesController < ApplicationController
 
   def update
     @host = Host.find(params[:host_id])
-    @space = Space.new(space_params)
-    @space.host = @host
+    @space = Space.find(params[:id])
 
-    if @space.save
-      redirect_to host_spaces_path
+    if @space.update(space_params)
+      redirect_to host_spaces_path(@host)
     else
-      render :new
+      render :edit
     end
   end
 

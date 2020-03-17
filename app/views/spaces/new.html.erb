@@ -1,0 +1,8 @@
+<%= simple_form_for [@host, @space] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :outlets %>
+  <%= f.input :capacity %>
+  <%= f.button :submit %>
+<% end %>

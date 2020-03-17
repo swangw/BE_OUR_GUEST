@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :hosts
   root to: 'spaces#index'
   resources :spaces, only: [:show] do
-    resources :bookings, only: [:show, :create]
+    resources :bookings, only: [:create]
   end
+
+  resources :bookings, only: [:show]
 
   resources :hosts, only: [:new, :create] do
     resources :spaces, only: [:index, :show, :new, :create]

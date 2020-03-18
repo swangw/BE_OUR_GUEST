@@ -4,6 +4,14 @@ class SpacesController < ApplicationController
     if params[:host_id]
       @host = Host.find(params[:host_id])
       @spaces = @host.spaces
+      @spaces = @spaces.geocoded
+      @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+      }
+      end
     else
       @spaces = Space.geocoded
       @markers = @spaces.map do |space|
@@ -65,7 +73,7 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:name, :address, :price_per_hour, :outlets, :capacity)
+    params.require(:space).permit(:name, :address, :price_per_hour, :outlets, :capacity, photos: [])
   end
 
 end

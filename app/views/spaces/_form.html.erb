@@ -34,5 +34,6 @@
       <%= f.check_box :drinks_available, as: :string, checked_value: "The host has indicated this space has drinks available", unchecked_value: "" %>
     </label>
   </div>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit %>
 <% end %>

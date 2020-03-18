@@ -1,7 +1,17 @@
 <div class="cards">
   <% spaces.each do |space| %>
-      <div class="card-space">
-        <img src='<%= space.images[0] %>' class="card-img-top" alt="hotel-lounge">
+    <div class="card-space">
+      <img src='<%= space.images[0] %>' class="card-img-top" alt="hotel-lounge">
+      <% if host %>
+
+        <%= link_to host_space_path(host, space), method: :delete, data: {confirm: "Are you sure you want to remove this space?"} do %>
+          <i class="far fa-times-circle btn-delete"></i>
+        <% end %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= space.name %></h5>
+        <p class="card-text"><%= space.address %></p>
+        <p class="card-text font-weight-bold">$<%= space.price_per_hour %>/hour</p>
         <% if host %>
           <%= link_to host_space_path(host, space), method: :delete, data: {confirm: "Are you sure you want to remove this space?"} do %>
             <i class="far fa-times-circle btn-delete"></i>

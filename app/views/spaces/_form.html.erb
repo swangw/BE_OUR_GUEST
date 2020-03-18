@@ -4,5 +4,35 @@
   <%= f.input :price_per_hour %>
   <%= f.input :outlets %>
   <%= f.input :capacity %>
+  <div class="form-check">
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Cozy</span>
+      <%= f.check_box :cozy, as: :string, checked_value: "The host has indicated this space is cozy", unchecked_value: "" %>
+    </label>
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Natural Light</span>
+      <%= f.check_box :natural_lighting, as: :string, checked_value: "The host has indicated this space has natural light", unchecked_value: "" %>
+    </label>
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Comfortable Seats</span>
+      <%= f.check_box :comfortable_seats, as: :string, checked_value: "The host has indicated this space has comfortable seating", unchecked_value: "" %>
+    </label>
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Good Coffee</span>
+      <%= f.check_box :good_coffee, as: :string, checked_value: "The host has indicated this space has great coffee", unchecked_value: "" %>
+    </label>
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Strong Aircon</span>
+      <%= f.check_box :strong_aircon, as: :string, checked_value: "The host has indicated this space has strong aircon", unchecked_value: "" %>
+   </label>
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Food Available</span>
+      <%= f.check_box :food_available, as: :string, checked_value: "The host has indicated this space has food available", unchecked_value: "" %>
+    </label>
+    <label>
+      <span class="badge badge-pill badge-secondary" style="padding: 12px">Drinks Available</span>
+      <%= f.check_box :drinks_available, as: :string, checked_value: "The host has indicated this space has drinks available", unchecked_value: "" %>
+    </label>
+  </div>
   <%= f.button :submit %>
 <% end %>

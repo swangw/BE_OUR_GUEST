@@ -33,72 +33,72 @@
         <p>Outlets: <%= @space.outlets %></p>
       </div>
       <div>
-        <p>Characteristics</p>
-          <table class="table">
-            <thead>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @space.cozy? %>
               <tr>
-                <th scope="col">Feature</th>
-                <th scope="col">Description</th>
+                <td><i class="fas fa-smile-beam"></i></td>
+                <td><%= @space.cozy %></td>
               </tr>
-            </thead>
-            <tbody>
-              <% if @space.cozy? %>
-                <tr>
-                  <td><i class="fas fa-smile-beam"></i></td>
-                  <td><%= @space.cozy %></td>
-                </tr>
-              <% end %>
+            <% end %>
 
-              <% if @space.quiet? %>
-                <tr>
-                  <td><i class="fas fa-volume-mute"></i></td>
-                  <td><%= @space.quiet %></td>
-                </tr>
-              <% end %>
+            <% if @space.quiet? %>
+              <tr>
+                <td><i class="fas fa-volume-mute"></i></td>
+                <td><%= @space.quiet %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.natural_lighting? %>
-                <tr>
-                  <td><i class="fas fa-sun"></i></td>
-                  <td><%= @space.natural_lighting %></td>
-                </tr>
-              <% end %>
+            <% if @space.natural_lighting? %>
+              <tr>
+                <td><i class="fas fa-sun"></i></td>
+                <td><%= @space.natural_lighting %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.comfortable_seats? %>
-                <tr>
-                  <td><i class="fas fa-couch"></i></td>
-                  <td><%= @space.comfortable_seats %></td>
-                </tr>
-              <% end %>
+            <% if @space.comfortable_seats? %>
+              <tr>
+                <td><i class="fas fa-couch"></i></td>
+                <td><%= @space.comfortable_seats %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.good_coffee? %>
-                <tr>
-                  <td><i class="fas fa-coffee"></i></td>
-                  <td><%= @space.good_coffee %></td>
-                </tr>
-              <% end %>
+            <% if @space.good_coffee? %>
+              <tr>
+                <td><i class="fas fa-coffee"></i></td>
+                <td><%= @space.good_coffee %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.strong_aircon? %>
-                <tr>
-                  <td><i class="fas fa-fan"></i></td>
-                  <td><%= @space.strong_aircon %></td>
-                </tr>
-              <% end %>
+            <% if @space.strong_aircon? %>
+              <tr>
+                <td><i class="fas fa-fan"></i></td>
+                <td><%= @space.strong_aircon %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.food_available? %>
-                <tr>
-                  <td><i class="fas fa-hamburger"></i></td>
-                  <td><%= @space.food_available %></td>
-                </tr>
-              <% end %>
+            <% if @space.food_available? %>
+              <tr>
+                <td><i class="fas fa-hamburger"></i></td>
+                <td><%= @space.food_available %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.drinks_available? %>
-                <tr>
-                  <td><i class="fas fa-cocktail"></i></td>
-                  <td><%= @space.drinks_available %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+            <% if @space.drinks_available? %>
+              <tr>
+                <td><i class="fas fa-cocktail"></i></td>
+                <td><%= @space.drinks_available %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
 

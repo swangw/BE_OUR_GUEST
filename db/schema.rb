@@ -44,9 +44,19 @@ ActiveRecord::Schema.define(version: 2020_03_17_093104) do
     t.bigint "space_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "host_id"
-    t.index ["host_id"], name: "index_bookings_on_host_id"
     t.index ["space_id"], name: "index_bookings_on_space_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_clients_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
 
   create_table "hosts", force: :cascade do |t|
@@ -82,8 +92,19 @@ ActiveRecord::Schema.define(version: 2020_03_17_093104) do
     t.index ["host_id"], name: "index_spaces_on_host_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "hosts"
   add_foreign_key "bookings", "spaces"
   add_foreign_key "spaces", "hosts"
 end

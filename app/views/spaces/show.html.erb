@@ -1,133 +1,142 @@
 <!-- Slideshow container -->
-<div class="container mt-4">
-  <div id="carouselExampleControls" class="carousel slide mt-3" data-ride="carousel">
-    <div class="carousel-inner my-smaller-carousel">
-      <div class="carousel-item active">
-        <% if @space.photos.attached? %>
-          <%= cl_image_tag @space.photos[0].key, height: 300, width: 400, crop: :fill, class: "stretch d-block" %>
-        <% else %>
-          <img class="stretch" src="<%= @space.images[0] %>" class="d-block" alt="...">
-        <% end %>
-      </div>
-      <div class="carousel-item">
-        <% if @space.photos.attached? %>
-          <%= cl_image_tag @space.photos[1].key, height: 300, width: 400, crop: :fill, class: "stretch d-block" %>
-        <% else %>
-          <img class="stretch" src="<%= @space.images[1] %>" class="d-block" alt="...">
-        <% end %>      </div>
-      <div class="carousel-item">
-        <% if @space.photos.attached? %>
-          <%= cl_image_tag @space.photos[2].key, height: 300, width: 400, crop: :fill, class: "stretch d-block" %>
-        <% else %>
-          <img class="stretch" src="<%= @space.images[2] %>" class="d-block" alt="...">
-        <% end %>
-      </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
-  </div>
+<div class="container">
+  <div class="container d-flex mt-4">
 
-  <div class="d-flex justify-content-around mt-4">
-    <div>
-      <h3><%= @space.name %></h3>
-      <h4><%= @space.address %></h4>
-      <div>
-        <p>Capacity: <%= @space.capacity %></p>
-        <p>Outlets: <%= @space.outlets %></p>
-      </div>
-      <div>
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Feature</th>
-              <th scope="col">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% if @space.cozy? %>
-              <tr>
-                <td><i class="fas fa-smile-beam"></i></td>
-                <td><%= @space.cozy %></td>
-              </tr>
+    <div class="small-container-1">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner my-smaller-carousel rounded">
+          <div class="carousel-item active">
+            <% if @space.photos.attached? %>
+              <%= cl_image_tag @space.photos[0].key, height: 300, width: 400, crop: :fill, class: "stretch d-block" %>
+            <% else %>
+              <img class="stretch" src="<%= @space.images[0] %>" class="d-block" alt="...">
             <% end %>
-
-            <% if @space.quiet? %>
-              <tr>
-                <td><i class="fas fa-volume-mute"></i></td>
-                <td><%= @space.quiet %></td>
-              </tr>
-            <% end %>
-
-            <% if @space.natural_lighting? %>
-              <tr>
-                <td><i class="fas fa-sun"></i></td>
-                <td><%= @space.natural_lighting %></td>
-              </tr>
-            <% end %>
-
-            <% if @space.comfortable_seats? %>
-              <tr>
-                <td><i class="fas fa-couch"></i></td>
-                <td><%= @space.comfortable_seats %></td>
-              </tr>
-            <% end %>
-
-            <% if @space.good_coffee? %>
-              <tr>
-                <td><i class="fas fa-coffee"></i></td>
-                <td><%= @space.good_coffee %></td>
-              </tr>
-            <% end %>
-
-            <% if @space.strong_aircon? %>
-              <tr>
-                <td><i class="fas fa-fan"></i></td>
-                <td><%= @space.strong_aircon %></td>
-              </tr>
-            <% end %>
-
-            <% if @space.food_available? %>
-              <tr>
-                <td><i class="fas fa-hamburger"></i></td>
-                <td><%= @space.food_available %></td>
-              </tr>
-            <% end %>
-
-            <% if @space.drinks_available? %>
-              <tr>
-                <td><i class="fas fa-cocktail"></i></td>
-                <td><%= @space.drinks_available %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="booking-form border rounded p-3">
-      <p>Book this place ($<%= @space.price_per_hour %>/hour)</p>
-      <%= simple_form_for [@space, @booking] do |f| %>
-        <% if @booking.errors.any? %>
-          <div class="errors-container text-danger">
-           <p>Please enter the required details</p>
           </div>
-        <% end %>
+          <div class="carousel-item">
+            <% if @space.photos.attached? %>
+              <%= cl_image_tag @space.photos[1].key, height: 300, width: 400, crop: :fill, class: "stretch d-block" %>
+            <% else %>
+              <img class="stretch" src="<%= @space.images[1] %>" class="d-block" alt="...">
+            <% end %>
+          </div>
+          <div class="carousel-item">
+            <% if @space.photos.attached? %>
+              <%= cl_image_tag @space.photos[2].key, height: 300, width: 400, crop: :fill, class: "stretch d-block" %>
+            <% else %>
+              <img class="stretch" src="<%= @space.images[2] %>" class="d-block" alt="...">
+            <% end %>
+          </div>
+          <div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-        <%= f.input :client_name, label: 'Name', placeholder: 'Jane Doe', error: 'Name is mandatory, please specify one' %>
-        <%= f.input :client_email, label: 'Email', placeholder: 'jane@gmail.com', error: 'Email is mandatory, please specify one' %>
-        <%= f.input :start_time, as: :string, type: :text %>
-        <%= f.input :end_time, as: :string, type: :text %>
-        <%= f.button :submit, 'Book now', class: "sweet-alert btn-ghost w-100" %>
-      <% end %>
+      <div class="mt-4">
+        <div>
+          <h3><%= @space.name %></h3>
+          <h4><%= @space.address %></h4>
+          <div class="d-flex">
+            <p>Capacity: <%= @space.capacity %></p>
+            <p>Outlets: <%= @space.outlets %></p>
+          </div>
+        </div>
+
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if @space.cozy? %>
+                <tr>
+                  <td><i class="fas fa-smile-beam"></i></td>
+                  <td><%= @space.cozy %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.quiet? %>
+                <tr>
+                  <td><i class="fas fa-volume-mute"></i></td>
+                  <td><%= @space.quiet %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.natural_lighting? %>
+                <tr>
+                  <td><i class="fas fa-sun"></i></td>
+                  <td><%= @space.natural_lighting %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.comfortable_seats? %>
+                <tr>
+                  <td><i class="fas fa-couch"></i></td>
+                  <td><%= @space.comfortable_seats %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.good_coffee? %>
+                <tr>
+                  <td><i class="fas fa-coffee"></i></td>
+                  <td><%= @space.good_coffee %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.strong_aircon? %>
+                <tr>
+                  <td><i class="fas fa-fan"></i></td>
+                  <td><%= @space.strong_aircon %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.food_available? %>
+                <tr>
+                  <td><i class="fas fa-hamburger"></i></td>
+                  <td><%= @space.food_available %></td>
+                </tr>
+              <% end %>
+
+              <% if @space.drinks_available? %>
+                <tr>
+                  <td><i class="fas fa-cocktail"></i></td>
+                  <td><%= @space.drinks_available %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-container-2">
+      <div class="booking-form p-3">
+        <p>Book this place ($<%= @space.price_per_hour %>/hour)</p>
+        <%= simple_form_for [@space, @booking] do |f| %>
+          <% if @booking.errors.any? %>
+            <div class="errors-container text-danger">
+            <p>Please enter the required details</p>
+            </div>
+          <% end %>
+
+          <%= f.input :client_name, label: 'Name', placeholder: 'Jane Doe', error: 'Name is mandatory, please specify one' %>
+          <%= f.input :client_email, label: 'Email', placeholder: 'jane@gmail.com', error: 'Email is mandatory, please specify one' %>
+          <%= f.input :start_time, as: :string, type: :text %>
+          <%= f.input :end_time, as: :string, type: :text %>
+          <%= f.button :submit, 'Book now', class: "sweet-alert btn-ghost w-100" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
 <%#= javascript_pack_tag 'calculate_total_price' %>

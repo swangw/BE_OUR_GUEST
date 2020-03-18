@@ -1,6 +1,10 @@
 import "bootstrap";
 import { initSweetAlertForForm } from '../plugins/swal';
+import { initMapbox } from '../plugins/mapbox';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import flatpickr from "flatpickr";
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { initAutocomplete } from '../plugins/autocomplete';
 
 // initSweetAlertForForm('#new_booking', {
 //   title: "Confirm booking?",
@@ -15,7 +19,8 @@ import flatpickr from "flatpickr";
 //   }
 // });
 
-
+initMapbox();
+initAutocomplete();
 
 const startTimeInput = document.getElementById('booking_start_time');
 const endTimeInput = document.getElementById('booking_end_time');

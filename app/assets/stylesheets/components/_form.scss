@@ -1,0 +1,2 @@
+input[type=checkbox]:not(:checked) + label {color: gray}
+input[type=checkbox]:checked + label {color: blue}

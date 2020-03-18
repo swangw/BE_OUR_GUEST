@@ -1,0 +1,13 @@
+<div class="booking-form mt-3">
+
+  <h1>Your booking is confirmed!</h1>
+
+  <img src='https://source.unsplash.com/1600x900/?hotel-lounge <%= @booking.space.id %>' class="card-img-top mb-3" alt="hotel-lounge">
+  <h3>You have booked <%= @booking.space.name %> for <%= @booking.start_time.strftime('%A, %b %d') %> from <%= @booking.start_time.strftime('%I:%M %p') %> till <%= @booking.end_time.strftime('%I:%M %p') %></h3>
+
+  <p>A confirmation email will be sent to you shortly.</p>
+  <p>Thank you for using <em>Be Our Guest</em>, <%= @booking.client_name %></p>
+
+</div>
+
+

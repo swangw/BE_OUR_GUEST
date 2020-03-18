@@ -1,10 +1,13 @@
 import "bootstrap";
-import { initSweetAlertForForm } from '../plugins/swal';
-import { initMapbox } from '../plugins/mapbox';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import flatpickr from "flatpickr";
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import 'flatpickr/dist/flatpickr.css';
+
+import { initSweetAlertForForm } from '../plugins/swal';
+
+import { initMapbox } from '../plugins/mapbox';
 import { initAutocomplete } from '../plugins/autocomplete';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 // initSweetAlertForForm('#new_booking', {
 //   title: "Confirm booking?",

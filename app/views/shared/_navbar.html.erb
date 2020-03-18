@@ -17,6 +17,9 @@
         <li class="nav-item">
           <%= link_to "View my spaces", host_spaces_path(current_host), class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "View my bookings", host_bookings_path(current_host), class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="botton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_host.name %>

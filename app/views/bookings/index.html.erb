@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h1>My bookings</h1>
+
+  <div class="booking-cards">
+
+    <% @bookings.each do |booking| %>
+      <div class="card-booking mb-3">
+        <img src="<%= booking.space.images[0] %>"/>
+        <div class="card-booking-infos">
+          <h2><%= booking.space.name %></h2>
+          <p>Customer name: <%= booking.client_name %></p>
+          <p>Date booked: <%= booking.start_time.strftime('%A, %b %d') %></p>
+          <p>Start time: <%= booking.start_time.strftime('%I:%M %p') %></p>
+          <p>End time: <%= booking.end_time.strftime('%I:%M %p') %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -11,6 +11,76 @@ require 'faker'
 Host.destroy_all
 Space.destroy_all
 
+ann = Host.new(
+  name: "Ann Koh",
+  email: "ann@gmail.com",
+  password: 123456
+  )
+ann.save!
+
+annspace1 = Space.new(
+  name: Faker::Company.name,
+  address: "Novena, Singapore",
+  price_per_hour: rand(10..15),
+  outlets: rand(5..10),
+  capacity: rand(15..20),
+  quiet: "You could hear a pin drop in our tranquil space, where only soothing music will help you maximize your productivity.",
+  natural_lighting: "Our skylights allow rays of sunshine to shine through on the beautiful foliage we have spread throughout our space.",
+  images: ['https://source.unsplash.com/1600x900/?hotel-lounge1', 'https://source.unsplash.com/1600x900/?hotel-lounge2', 'https://source.unsplash.com/1600x900/?hotel-lounge3']
+)
+annspace1.host = ann
+annspace1.save!
+
+annspace2 = Space.new(
+  name: Faker::Company.name,
+  address: "Raffles Place, Singapore",
+  price_per_hour: rand(10..15),
+  outlets: rand(5..10),
+  capacity: rand(15..20),
+  good_coffee: "We roast our own coffee beans from Guatemala at our in-house roastery, all under the critical care of our master barista.",
+  strong_aircon: "We keep this space comfortably cool with the aircon consistently set to 23 C, which scientists have determined is the ideal temperature for creativity.",
+  images: ['https://source.unsplash.com/1600x900/?hotel-lounge1', 'https://source.unsplash.com/1600x900/?hotel-lounge2', 'https://source.unsplash.com/1600x900/?hotel-lounge3']
+)
+annspace2.host = ann
+annspace2.save!
+
+annbooking1 = Booking.new(
+  start_time: DateTime.new(2020,3,19,11),
+  end_time: DateTime.new(2020,3,19,16),
+  client_name: "Saken",
+  client_email: "saken@saken.com"
+  )
+annbooking1.space = annspace1
+annbooking1.save!
+
+annbooking2 = Booking.new(
+  start_time: DateTime.new(2020,3,20,12),
+  end_time: DateTime.new(2020,3,20,17),
+  client_name: "Sarah",
+  client_email: "sarah@sarah.com"
+  )
+annbooking2.space = annspace1
+annbooking2.save!
+
+annbooking3 = Booking.new(
+  start_time: DateTime.new(2020,3,21,9),
+  end_time: DateTime.new(2020,3,21,13),
+  client_name: "Miguel",
+  client_email: "miguel@miguel.com"
+  )
+annbooking3.space = annspace2
+annbooking3.save!
+
+
+annbooking4 = Booking.new(
+  start_time: DateTime.new(2020,3,22,12),
+  end_time: DateTime.new(2020,3,22,16),
+  client_name: "Prima",
+  client_email: "prima@prima.com"
+  )
+annbooking4.space = annspace2
+annbooking4.save!
+
 host1 = Host.new(
   name: Faker::Name.name,
   email: Faker::Internet.email,
@@ -19,7 +89,7 @@ host1 = Host.new(
   host1.save!
 space1 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Holland Village, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -32,7 +102,7 @@ space1.save!
 
 space2 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Somerset, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -46,7 +116,7 @@ space2.save!
 
 space3 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Buona Vista, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -59,7 +129,7 @@ space3.save!
 
 space4 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Little India, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -72,7 +142,7 @@ space4.save!
 
 space5 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Telok Ayer, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -91,7 +161,7 @@ host2 = Host.new(
   host1.save!
 space6 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Orchard, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -104,7 +174,7 @@ space6.save!
 
 space7 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "City Hall, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -118,7 +188,7 @@ space7.save!
 
 space8 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Marina Bay, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -131,7 +201,7 @@ space8.save!
 
 space9 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Kallang, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
@@ -144,7 +214,7 @@ space9.save!
 
 space10 = Space.new(
   name: Faker::Company.name,
-  address: Faker::Address.street_address,
+  address: "Tiong Bahru, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),

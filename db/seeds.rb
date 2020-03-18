@@ -39,7 +39,7 @@ annspace2 = Space.new(
   capacity: rand(15..20),
   good_coffee: "We roast our own coffee beans from Guatemala at our in-house roastery, all under the critical care of our master barista.",
   strong_aircon: "We keep this space comfortably cool with the aircon consistently set to 23 C, which scientists have determined is the ideal temperature for creativity.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge33', 'https://source.unsplash.com/1600x900/?hotel-lounge34', 'https://source.unsplash.com/1600x900/?hotel-lounge35']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lounge31', 'https://source.unsplash.com/1600x900/?hotel-lounge32', 'https://source.unsplash.com/1600x900/?hotel-lounge33']
 )
 annspace2.host = ann
 annspace2.save!
@@ -95,7 +95,7 @@ space1 = Space.new(
   capacity: rand(15..20),
   quiet: "Relax with your thoughts in our serene, peaceful space.",
   natural_lighting: "We have plenty of light through floor-to-ceiling windows to complement our plant-filled, natural design.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge1', 'https://source.unsplash.com/1600x900/?hotel-lounge2', 'https://source.unsplash.com/1600x900/?hotel-lounge3']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lounge34', 'https://source.unsplash.com/1600x900/?hotel-lounge35', 'https://source.unsplash.com/1600x900/?hotel-lounge36']
 )
 space1.host = host1
 space1.save!

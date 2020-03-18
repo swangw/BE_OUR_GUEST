@@ -2,7 +2,7 @@
 
   <% if @host %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1553369728-15ec6971afaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
-      <p>Coworking from the world's most stylish hotels</p>
+      <p>Join us to change the landscape of workspaces</p>
     </div>
   <% else %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517252441880-7c0968fc8513?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);">
@@ -12,16 +12,24 @@
 
   <div class="card-container mt-5">
     <div class="w-50 pb-4">
+    <% if @host %>
+      <p><strong>Be Our Guest</strong> helps you monetize your underutilized lounge space during the traditional business hours when your hotel guests are all at work.</p>
+    <% else %>
       <p><strong>Be Our Guest</strong> offers a unique selection of shared spaces in hotels with great views and idyllic setting. Ditch your conventional office workspace and come find inspiration and increase productivity in one of our spaces.</p>
+    <% end %>
     </div>
 
     <% if @host %>
-    <h3>My places</h3>
+      <h3>My places</h3>
     <% else %>
-    <h3>Places to work around Singapore</h3>
+      <h3>Places to work around Singapore</h3>
     <% end %>
 
     <% if @host %>
+      <% if @host.spaces.empty? %>
+        <p>You have no space yet.</p>
+        <%= link_to "Add a space now", new_host_space_path(current_host) %>
+      <% end %>
       <%= render 'card', spaces: @spaces, host: @host %>
     <% else %>
       <%= render 'card', spaces: @spaces, host: nil %>

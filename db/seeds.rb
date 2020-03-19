@@ -19,7 +19,7 @@ ann = Host.new(
 ann.save!
 
 annspace1 = Space.new(
-  name: Faker::Company.name,
+  name: "Majestic Hotel",
   address: "Novena, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
@@ -32,7 +32,7 @@ annspace1.host = ann
 annspace1.save!
 
 annspace2 = Space.new(
-  name: Faker::Company.name,
+  name: "Antique Palms Resort",
   address: "Raffles Place, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
@@ -88,67 +88,67 @@ host1 = Host.new(
   )
   host1.save!
 space1 = Space.new(
-  name: Faker::Company.name,
+  name: "Sunrise Aurora Resort & Spa",
   address: "Holland Village, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   quiet: "Relax with your thoughts in our serene, peaceful space.",
   natural_lighting: "We have plenty of light through floor-to-ceiling windows to complement our plant-filled, natural design.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge34', 'https://source.unsplash.com/1600x900/?hotel-lounge35', 'https://source.unsplash.com/1600x900/?hotel-lounge36']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby1', 'https://source.unsplash.com/1600x900/?hotel-lobby2', 'https://source.unsplash.com/1600x900/?hotel-lobby3']
 )
 space1.host = host1
 space1.save!
 
 space2 = Space.new(
-  name: Faker::Company.name,
+  name: "Coast Hotels",
   address: "Somerset, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   cozy: "Your creativity will flourish in the comfiest of chairs sitting next to a lovely cactus garden.",
   natural_lighting: "Enjoy light streaming through the skylights in our bright, airy space.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge4', 'https://source.unsplash.com/1600x900/?hotel-lounge5', 'https://source.unsplash.com/1600x900/?hotel-lounge6']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby4', 'https://source.unsplash.com/1600x900/?hotel-lobby5', 'https://source.unsplash.com/1600x900/?hotel-lobby6']
 )
 space2.host = host1
 space2.save!
 
 
 space3 = Space.new(
-  name: Faker::Company.name,
+  name: "Kings Inn",
   address: "Buona Vista, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   strong_aircon: "You'll be cool and comfortable in our lobby with excellent air circulation throughout the space.",
   good_coffee: "Our restaurant staff serves only the best locally sourced coffee.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge7', 'https://source.unsplash.com/1600x900/?hotel-lounge8', 'https://source.unsplash.com/1600x900/?hotel-lounge9']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby7', 'https://source.unsplash.com/1600x900/?hotel-lobby8', 'https://source.unsplash.com/1600x900/?hotel-lobby9']
 )
 space3.host = host1
 space3.save!
 
 space4 = Space.new(
-  name: Faker::Company.name,
+  name: "Moss View Hotel",
   address: "Little India, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   drinks_available: "After a day of work, please enjoy cocktails crafted by our in-house bartender at special discounts for Be Our Guest clients.",
   food_available: "Need to work through lunch? We've got you covered with  a full menu from our restaurant.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge10', 'https://source.unsplash.com/1600x900/?hotel-lounge11', 'https://source.unsplash.com/1600x900/?hotel-lounge12']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby10', 'https://source.unsplash.com/1600x900/?hotel-lobby11', 'https://source.unsplash.com/1600x900/?hotel-lobby12']
 )
 space4.host = host1
 space4.save!
 
 space5 = Space.new(
-  name: Faker::Company.name,
+  name: "Hillside Hotel",
   address: "Telok Ayer, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   comfortable_seats: "Ergonomics are important when you're working on a computer all day. We have the latest ergo chairs to keep you comfy.",
   natural_lighting: "We've just re-designed our lobby space to invite more natural lighting in, integrating indoor and out through our center garden.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge13', 'https://source.unsplash.com/1600x900/?hotel-lounge14', 'https://source.unsplash.com/1600x900/?hotel-lounge15']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby13', 'https://source.unsplash.com/1600x900/?hotel-lobby14', 'https://source.unsplash.com/1600x900/?hotel-lobby15']
 )
 space5.host = host1
 space5.save!
@@ -160,67 +160,67 @@ host2 = Host.new(
   )
   host1.save!
 space6 = Space.new(
-  name: Faker::Company.name,
+  name: "Quaint Motel",
   address: "Orchard, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   quiet: "Relax with your thoughts in our serene, peaceful space.",
   natural_lighting: "We have plenty of light through floor-to-ceiling windows to complement our plant-filled, natural design.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge16', 'https://source.unsplash.com/1600x900/?hotel-lounge17', 'https://source.unsplash.com/1600x900/?hotel-lounge18']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby16', 'https://source.unsplash.com/1600x900/?hotel-lobby17', 'https://source.unsplash.com/1600x900/?hotel-lobby18']
 )
 space6.host = host2
 space6.save!
 
 space7 = Space.new(
-  name: Faker::Company.name,
+  name: "La Parisienne",
   address: "City Hall, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   cozy: "Your creativity will flourish in the comfiest of chairs sitting next to a lovely cactus garden.",
   natural_lighting: "Enjoy light streaming through the skylights in our bright, airy space.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge19', 'https://source.unsplash.com/1600x900/?hotel-lounge20', 'https://source.unsplash.com/1600x900/?hotel-lounge21']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby19', 'https://source.unsplash.com/1600x900/?hotel-lobby20', 'https://source.unsplash.com/1600x900/?hotel-lobby21']
 )
 space7.host = host2
 space7.save!
 
 
 space8 = Space.new(
-  name: Faker::Company.name,
+  name: "The Worldly Traveler",
   address: "Marina Bay, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   strong_aircon: "You'll be cool and comfortable in our lobby with excellent air circulation throughout the space.",
   good_coffee: "Our restaurant staff serves only the best locally sourced coffee.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge22', 'https://source.unsplash.com/1600x900/?hotel-lounge23', 'https://source.unsplash.com/1600x900/?hotel-lounge24']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby22', 'https://source.unsplash.com/1600x900/?hotel-lobby23', 'https://source.unsplash.com/1600x900/?hotel-lobby24']
 )
 space8.host = host2
 space8.save!
 
 space9 = Space.new(
-  name: Faker::Company.name,
+  name: "Grand Hotel",
   address: "Kallang, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   drinks_available: "After a day of work, please enjoy cocktails crafted by our in-house bartender at special discounts for Be Our Guest clients.",
   food_available: "Need to work through lunch? We've got you covered with  a full menu from our restaurant.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge25', 'https://source.unsplash.com/1600x900/?hotel-lounge26', 'https://source.unsplash.com/1600x900/?hotel-lounge27']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby25', 'https://source.unsplash.com/1600x900/?hotel-lobby26', 'https://source.unsplash.com/1600x900/?hotel-lobby27']
 )
 space9.host = host2
 space9.save!
 
 space10 = Space.new(
-  name: Faker::Company.name,
+  name: "Shoreline Hotel & Spa",
   address: "Tiong Bahru, Singapore",
   price_per_hour: rand(10..15),
   outlets: rand(5..10),
   capacity: rand(15..20),
   comfortable_seats: "Ergonomics are important when you're working on a computer all day. We have the latest ergo chairs to keep you comfy.",
   natural_lighting: "We've just re-designed our lobby space to invite more natural lighting in, integrating indoor and out through our center garden.",
-  images: ['https://source.unsplash.com/1600x900/?hotel-lounge27', 'https://source.unsplash.com/1600x900/?hotel-lounge29', 'https://source.unsplash.com/1600x900/?hotel-lounge30']
+  images: ['https://source.unsplash.com/1600x900/?hotel-lobby28', 'https://source.unsplash.com/1600x900/?hotel-lobby29', 'https://source.unsplash.com/1600x900/?hotel-lobby30']
 )
 space10.host = host2
 space10.save!

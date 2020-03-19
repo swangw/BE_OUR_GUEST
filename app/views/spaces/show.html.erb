@@ -1,9 +1,9 @@
 <!-- Slideshow container -->
 <div class="container">
-  <div class="container d-flex">
+  <div class="row">
 
-    <div class="small-container-1">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="col-md-8 col-sm-12">
+      <div id="carouselExampleControls" class="carousel slide mt-4" data-ride="carousel">
         <div class="carousel-inner my-smaller-carousel rounded">
           <div class="carousel-item active">
             <% if @space.photos.attached? %>
@@ -39,92 +39,90 @@
         </div>
       </div>
 
-      <div class="">
-        <div>
-          <h3><strong><%= @space.name %></strong></h3>
-          <h4><%= @space.address %></h4>
-          <div class="d-flex">
-            <p>Capacity: <%= @space.capacity %> |  Outlets: <%= @space.outlets %></p>
-          </div>
+      <div class="space-details">
+        <h3><strong><%= @space.name %></strong></h3>
+        <h4><%= @space.address %></h4>
+        <div class="d-flex">
+          <p>Capacity: <%= @space.capacity %> |  Outlets: <%= @space.outlets %></p>
         </div>
+      </div>
 
-        <div>
-          <table class="table">
-            <thead>
+      <div class="space-feature">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Features</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @space.cozy? %>
               <tr>
-                <th scope="col">Features</th>
-                <th scope="col"></th>
+                <td><i class="fas fa-smile-beam"></i></td>
+                <td><%= @space.cozy %></td>
               </tr>
-            </thead>
-            <tbody>
-              <% if @space.cozy? %>
-                <tr>
-                  <td><i class="fas fa-smile-beam"></i></td>
-                  <td><%= @space.cozy %></td>
-                </tr>
-              <% end %>
+            <% end %>
 
-              <% if @space.quiet? %>
-                <tr>
-                  <td><i class="fas fa-volume-mute"></i></td>
-                  <td><%= @space.quiet %></td>
-                </tr>
-              <% end %>
+            <% if @space.quiet? %>
+              <tr>
+                <td><i class="fas fa-volume-mute"></i></td>
+                <td><%= @space.quiet %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.natural_lighting? %>
-                <tr>
-                  <td><i class="fas fa-sun"></i></td>
-                  <td><%= @space.natural_lighting %></td>
-                </tr>
-              <% end %>
+            <% if @space.natural_lighting? %>
+              <tr>
+                <td><i class="fas fa-sun"></i></td>
+                <td><%= @space.natural_lighting %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.comfortable_seats? %>
-                <tr>
-                  <td><i class="fas fa-couch"></i></td>
-                  <td><%= @space.comfortable_seats %></td>
-                </tr>
-              <% end %>
+            <% if @space.comfortable_seats? %>
+              <tr>
+                <td><i class="fas fa-couch"></i></td>
+                <td><%= @space.comfortable_seats %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.good_coffee? %>
-                <tr>
-                  <td><i class="fas fa-coffee"></i></td>
-                  <td><%= @space.good_coffee %></td>
-                </tr>
-              <% end %>
+            <% if @space.good_coffee? %>
+              <tr>
+                <td><i class="fas fa-coffee"></i></td>
+                <td><%= @space.good_coffee %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.strong_aircon? %>
-                <tr>
-                  <td><i class="fas fa-fan"></i></td>
-                  <td><%= @space.strong_aircon %></td>
-                </tr>
-              <% end %>
+            <% if @space.strong_aircon? %>
+              <tr>
+                <td><i class="fas fa-fan"></i></td>
+                <td><%= @space.strong_aircon %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.food_available? %>
-                <tr>
-                  <td><i class="fas fa-hamburger"></i></td>
-                  <td><%= @space.food_available %></td>
-                </tr>
-              <% end %>
+            <% if @space.food_available? %>
+              <tr>
+                <td><i class="fas fa-hamburger"></i></td>
+                <td><%= @space.food_available %></td>
+              </tr>
+            <% end %>
 
-              <% if @space.drinks_available? %>
-                <tr>
-                  <td><i class="fas fa-cocktail"></i></td>
-                  <td><%= @space.drinks_available %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+            <% if @space.drinks_available? %>
+              <tr>
+                <td><i class="fas fa-cocktail"></i></td>
+                <td><%= @space.drinks_available %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <div class="small-container-2">
-      <div class="booking-form p-3">
+    <div class="col-md-4 col-sm-12">
+      <div class="booking-form p-3 mt-4">
         <p>Book this place ($<%= @space.price_per_hour %>/hour)</p>
         <%= simple_form_for [@space, @booking] do |f| %>
           <% if @booking.errors.any? %>
             <div class="errors-container text-danger">
-            <p>Please enter the required details</p>
+              <p>Please enter the required details</p>
             </div>
           <% end %>
 
@@ -138,4 +136,5 @@
     </div>
   </div>
 </div>
-<%#= javascript_pack_tag 'calculate_total_price' %>
+
+

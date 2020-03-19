@@ -1,0 +1,33 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon host">
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= cl_image_tag("dl0nojyrknsyx0xvoz2m")  %>
+<% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Add a space", new_host_space_path(current_host), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "View my spaces", host_spaces_path(current_host), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "View my bookings", host_bookings_path(current_host), class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="botton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_host.name %>
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to "Log out", destroy_host_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+      </li>
+    </ul>
+  </div>
+
+</div>

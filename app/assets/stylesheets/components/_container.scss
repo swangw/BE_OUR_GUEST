@@ -1,13 +1,32 @@
-.body {
+body {
   min-height: 100vh;
-  position: flex;
-  margin-top: 12px
+  display: flex;
+  flex-direction: column;
 }
 
-.description {
-  width: 50%;
+.main-container {
+  flex-grow: 1;
 }
 
 .container {
-  margin-top: 4px;
+  color: #303841;
+}
+
+.brand-description {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.cards-container {
+  padding-top: 20px;
+}
+
+.card-show-container-1 {
+  width: 75%;
+}
+
+.card-show-container-2 {
+  width: 25%;
 }

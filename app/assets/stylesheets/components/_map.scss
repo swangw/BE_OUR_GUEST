@@ -6,3 +6,15 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+#map {
+  visibility: visible;
+  height: 600px;
+  width: 100%;
+  transition: height .5s;
+
+  &.display {
+    visibility: hidden;
+    height: 0px;
+  }
+}

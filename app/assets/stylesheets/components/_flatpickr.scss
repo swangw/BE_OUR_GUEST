@@ -1,0 +1,16 @@
+// flex layout for time picker elements, so when one of the elements is hidden, the layout is still flexible and centered
+// expose hourElement, minuteElement, amPm, etc so you'll be able to do something like
+
+
+.flatpickr-time {
+  display: flex;
+
+  .flatpickr-time-separator {
+    display: none;
+    & + .numInputWrapper {
+      display: none;
+    }
+  }
+
+}
+

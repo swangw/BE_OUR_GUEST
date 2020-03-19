@@ -17,4 +17,12 @@
     visibility: hidden;
     height: 0px;
   }
+
+.mapboxgl-popup-content a {
+  text-decoration: none;
+  color: #303841;
+}
+
+.mapboxgl-popup-content a:hover {
+  color: #777777;
 }

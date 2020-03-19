@@ -63,7 +63,6 @@ body {
   position: relative;
 }
 
-
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -83,7 +82,6 @@ body {
   border: 2px solid #FFFFFF;
   padding: 8px 24px;
   border-radius: 50px;
-  // font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
@@ -95,7 +93,6 @@ body {
 
 .card-img-top {
   width: 50%;
-
 }
 
 .card-booking {
@@ -108,7 +105,7 @@ body {
 }
 
 .card-booking-starting {
-  background: $green;
+  background: #E0FFE2
 }
 
 .card-booking img {
@@ -134,7 +131,6 @@ body {
 .card-booking .card-booking-infos {
   padding: 16px;
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

@@ -35,7 +35,7 @@ if (startTimeInput) {
   flatpickr(startTimeInput, {
     enableTime: true,
     minDate: "today",
-    minTime: Date.now(),
+
     // disabled: unavailableTimes,
     dateFormat: "Y-m-d H:i",
   });
@@ -49,8 +49,8 @@ if (startTimeInput) {
 
     flatpickr(endTimeInput, {
       enableTime: true,
-      minDate: e.target.value,
-      minTime: Date.now(),
+      minDate: "e.target.value",
+
       // disabled: unavailableTimes,
       dateFormat: "Y-m-d H:i"
     });

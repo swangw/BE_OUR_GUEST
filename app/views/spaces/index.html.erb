@@ -8,6 +8,7 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517252441880-7c0968fc8513?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);">
     <div class="container">
       <p>Coworking from the world's most stylish hotels</p>
+      <a href="#show-listings" class="btn btn-ghost-white">Book now</a>
     </div>
   </div>
 <% end %>
@@ -22,11 +23,13 @@
     <% end %>
     </div>
 
-    <% if @host %>
-      <h3>My places</h3>
-    <% else %>
-      <h3>Places to work around Singapore</h3>
-    <% end %>
+    <section id="show-listings">
+      <% if @host %>
+        <h3>My places</h3>
+      <% else %>
+        <h3>Places to work around Singapore</h3>
+      <% end %>
+    </section>
 
     <% if @host %>
       <% if @host.spaces.empty? %>

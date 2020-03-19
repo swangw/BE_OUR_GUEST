@@ -1,5 +1,6 @@
 class SpacesController < ApplicationController
   def index
+    @banner = true
 
     if params[:host_id]
       @host = Host.find(params[:host_id])

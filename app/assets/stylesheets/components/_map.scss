@@ -7,6 +7,18 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+#map {
+  visibility: visible;
+  height: 400px;
+  width: 100%;
+  transition: height .5s;
+
+  &.display {
+    visibility: hidden;
+    height: 0px;
+  }
+}
+
 .mapboxgl-popup-content a {
   text-decoration: none;
   color: #303841;

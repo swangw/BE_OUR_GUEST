@@ -2,7 +2,7 @@ import "bootstrap";
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.css';
 
-import { initSweetAlertForForm } from '../plugins/swal';
+// import { initSweetAlertForForm } from '../plugins/swal';
 
 import { initMapbox } from '../plugins/mapbox';
 import { initAutocomplete } from '../plugins/autocomplete';
@@ -10,18 +10,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { loadMap } from '../components/map'
 
-// initSweetAlertForForm('#new_booking', {
-//   title: "Confirm booking?",
-//   text: "You will be charged ${total_price}",
-//   icon: "info",
-//   buttons: true,
-//   dangerMode: true,
-// }, (value) => {
-//   if (value) {
-//     const link = document.querySelector('#create-link')
-//     link.click();
-//   }
-// });
 
 initMapbox();
 initAutocomplete();
@@ -59,3 +47,16 @@ if (startTimeInput) {
     });
   })
 };
+
+// initSweetAlertForForm('#new_booking', {
+//   title: "Confirm booking?",
+//   text: "You will be charged ${total_price}",
+//   icon: "info",
+//   buttons: true,
+//   dangerMode: true,
+// }, (value) => {
+//   if (value) {
+//     const link = document.querySelector('#create-link')
+//     link.click();
+//   }
+// });

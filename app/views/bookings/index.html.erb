@@ -1,10 +1,12 @@
-<div class="container mt-4">
-  <h1>My bookings</h1>
+<h1>My bookings</h1>
 
-  <div class="booking-cards">
-
-    <% @bookings.each do |booking| %>
+<div class="booking-cards">
+  <% @bookings.each do |booking| %>
+    <% if booking.start_time - Time.now < 3600 %>
       <div class="card-booking my-3 d-flex bd-highlight mb-3">
+    <% else %>
+      <div class="card-booking my-3 d-flex bd-highlight mb-3">
+    <% end %>
         <img src="<%= booking.space.images[0] %>" />
         <div class="p-5 bd-highlight">
           <h2><%= booking.space.name %></h2>
@@ -13,10 +15,10 @@
         <div class="ml-auto p-5 bd-highlight">
           <%= link_to "View Details", booking_path(booking), class: "btn btn-primary" %>
         </div>
-        <!-- <p>Date booked: <%= booking.start_time.strftime('%A, %b %d') %></p> -->
-        <!-- <p>Start time: <%= booking.start_time.strftime('%I:%M %p') %></p> -->
-        <!-- <p>End time: <%= booking.end_time.strftime('%I:%M %p') %></p> -->
       </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
+
+<!-- <p>Date booked: <%#= booking.start_time.strftime('%A, %b %d') %></p> -->
+<!-- <p>Start time: <%#= booking.start_time.strftime('%I:%M %p') %></p> -->
+<!-- <p>End time: <%#= booking.end_time.strftime('%I:%M %p') %></p> -->

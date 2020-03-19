@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     @host = Host.find(params[:host_id])
     @bookings = @host.bookings
-    raise
+    @time = Time.now
   end
 
   def create

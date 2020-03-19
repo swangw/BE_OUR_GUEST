@@ -1,6 +1,19 @@
+.big-container {
+  width: 100%;
+}
+
+.small-container-1 {
+  width: 75%;
+}
+
+.small-container-2 {
+  width: 25%;
+}
+
+
 .my-smaller-carousel {
   min-width: 50%;
-  max-width: 60%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -10,7 +23,10 @@
   object-fit: cover;
 }
 
-.booking-form p {
-  font-size: 20px;
+.table th, .table td {
+  border: none;
+}
 
+.table thead th {
+  border: none;
 }

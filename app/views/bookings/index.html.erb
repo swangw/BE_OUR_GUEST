@@ -1,21 +1,19 @@
 <h1>My bookings</h1>
 
+<h2>Active Bookings</h2>
+
 <div class="booking-cards">
-  <% @bookings.each do |booking| %>
-    <% if booking.start_time - Time.now < 3600 %>
-      <div class="card-booking my-3 d-flex bd-highlight mb-3">
-    <% else %>
-      <div class="card-booking my-3 d-flex bd-highlight mb-3">
-    <% end %>
-        <img src="<%= booking.space.images[0] %>" />
-        <div class="p-5 bd-highlight">
-          <h2><%= booking.space.name %></h2>
-          <p>Customer name: <%= booking.client_name %></p>
-        </div>
-        <div class="ml-auto p-5 bd-highlight">
-          <%= link_to "View Details", booking_path(booking), class: "btn btn-primary" %>
-        </div>
+  <% @bookingsStarting.each do |booking| %>
+    <div class="card-booking my-3 d-flex bd-highlight mb-3">
+      <img src="<%= booking.space.images[0] %>" />
+      <div class="p-5 bd-highlight">
+        <h2><%= booking.space.name %></h2>
+        <p>Customer name: <%= booking.client_name %></p>
       </div>
+      <div class="ml-auto p-5 bd-highlight">
+        <%= link_to "View Details", booking_path(booking), class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 </div>
 

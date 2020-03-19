@@ -1,21 +1,6 @@
-<% if @host %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1553369728-15ec6971afaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
-    <div class="container">
-      <p>Join us to change the landscape of workspaces</p>
-    </div>
-  </div>
-<% else %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517252441880-7c0968fc8513?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);">
-    <div class="container">
-      <p>Coworking from the world's most stylish hotels</p>
-      <a href="#show-listings" class="btn btn-ghost-white">Book now</a>
-    </div>
-  </div>
-<% end %>
-
 <div class="container">
   <div class="card-container mt-5">
-    <div class="description w-50 pb-4">
+    <div class="description w-50 pb-4"
     <% if @host %>
       <p><strong>Be Our Guest</strong> helps you to monetize your underutilized spaces during the traditional business hours when your hotel guests are out or at work.</p>
     <% else %>

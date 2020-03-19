@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
     @host = Host.find(params[:host_id])
     @bookings = @host.bookings
     @time = Time.now
-    @bookingsStarting = @bookings.where("start_time > ? AND start_time < ?", Time.now - 3600, Time.now + 3600)
-
+    @bookingsStarting = @bookings.where("extract(hour from start_time) >= ? AND extract(hour from start_time) <= ?", Time.now.hour, Time.now.hour + 1).order("start_time")
+    @bookingsAfter = @bookings.where("extract(hour from start_time) > ?", Time.now.hour + 1).order("start_time")
   end
 
   def create
@@ -29,4 +29,3 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_time, :end_time, :client_name, :client_email)
   end
 end
-

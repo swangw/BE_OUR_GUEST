@@ -3,7 +3,8 @@ class BookingsController < ApplicationController
     @host = Host.find(params[:host_id])
     @bookings = @host.bookings
     @time = Time.now
-    @bookingsStarting = @bookings.where("start_time > ? AND start_time < ?", Time.now.utc - 3600, Time.now.utc + 3600)
+    @bookingsStarting = @bookings.where("start_time > ? AND start_time < ?", Time.now - 3600, Time.now + 3600)
+
   end
 
   def create

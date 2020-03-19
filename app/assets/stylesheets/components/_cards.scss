@@ -61,7 +61,6 @@
 
 .card-img-top {
   width: 50%;
-
 }
 
 .card-booking {
@@ -74,7 +73,7 @@
 }
 
 .card-booking-starting {
-  background: $green;
+  background: #E0FFE2
 }
 
 .card-booking img {
@@ -100,7 +99,6 @@
 .card-booking .card-booking-infos {
   padding: 16px;
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

@@ -10,21 +10,27 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% if host_signed_in? %>
-      <%= render 'shared/navbarhost' %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
-    <%= render 'shared/flashes' %>
-    <% if @banner %>
-      <%= render 'shared/banner' %>
-    <% end %>
-    <div class="container">
+    <div class="top-container">
+      <% if host_signed_in? %>
+        <%= render 'shared/navbarhost' %>
+      <% else %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+      <%= render 'shared/flashes' %>
+      <% if @banner %>
+        <%= render 'shared/banner' %>
+      <% end %>
+    </div>
+
+    <div class="main-container">
       <%= yield %>
     </div>
-    <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
 
+    <div class="footer-container">
+      <%= render 'shared/footer' %>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>

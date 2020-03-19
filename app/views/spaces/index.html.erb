@@ -1,13 +1,14 @@
 <div class="container">
-  <div class="card-container">
-    <div class="description"
-    <% if @host %>
-      <p><strong>Be Our Guest</strong> helps you to monetize your underutilized spaces during the traditional business hours when your hotel guests are out or at work.</p>
-    <% else %>
-      <p><strong>Be Our Guest</strong> offers a unique selection of shared spaces in hotels with great views and idyllic setting. Ditch your conventional office workspace and come find inspiration and increase productivity in one of our spaces.</p>
-    <% end %>
-    </div>
 
+  <div class="brand-description">
+  <% if @host %>
+    <p><strong>Be Our Guest</strong> helps you to monetize your underutilized spaces during the traditional business hours when your hotel guests are out or at work.</p>
+  <% else %>
+    <p><strong>Be Our Guest</strong> offers a unique selection of shared spaces in hotels with great views and idyllic setting. Ditch your conventional office workspace and come find inspiration and increase productivity in one of our spaces.</p>
+  <% end %>
+  </div>
+
+  <div class="cards-container">
     <section id="show-listings">
       <% if @host %>
         <h3>My places</h3>

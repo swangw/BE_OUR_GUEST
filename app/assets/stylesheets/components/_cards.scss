@@ -1,11 +1,6 @@
-body {
-  padding: 0;
-  margin: 0;
-}
 
-.container {
-  color: #303841;
-}
+
+
 
 .cards {
   display: grid;
@@ -14,9 +9,7 @@ body {
   max-width: 100%;
 }
 
-.description {
-  font-size: 18px;
-}
+
 
 .card-space {
   overflow: hidden;
@@ -27,13 +20,7 @@ body {
   position: relative;
 }
 
-.btn-delete {
-  font-size: 32px;
-  color: #FFFFFF;
-  top: 12px;
-  right: 12px;
-  position: absolute;
-}
+
 
 .card-space > img {
   height: 200px;
@@ -63,33 +50,14 @@ body {
   position: relative;
 }
 
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
 
-.btn-ghost:hover {
-  opacity: 1;
-}
 
-.btn-ghost-white {
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
-  padding: 8px 24px;
-  border-radius: 50px;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
 
-.btn-ghost-white:hover {
-  opacity: 0.8;
-  color: #FFFFFF;
-}
+
+
+
+
+
 
 .card-img-top {
   width: 50%;

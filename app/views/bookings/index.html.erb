@@ -10,7 +10,7 @@
           <p><%= booking.start_time.strftime('%A, %b %d') %> for <%= (booking.end_time - booking.start_time)/3600 %> hours</p>
         </div>
         <div class="ml-auto p-5 bd-highlight">
-          <%= link_to "View Details and confirm", booking_path(booking), class: "btn btn-ghost" %>
+          <%= link_to "View details and confirm", booking_path(booking), class: "btn btn-ghost" %>
         </div>
       </div>
     <% end %>

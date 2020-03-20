@@ -9,18 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
+
   <body>
-    <div class="top-container">
-      <% if host_signed_in? %>
+    <% if host_signed_in? %>
+      <div class="top-container" style="margin-top: 80px">
         <%= render 'shared/navbarhost' %>
+        <%= render 'shared/flashes' %>
+        <% if @banner %>
+          <%= render 'shared/banner' %>
+        <% end %>
+      </div>
       <% else %>
-        <%= render 'shared/navbar' %>
-      <% end %>
-      <%= render 'shared/flashes' %>
-      <% if @banner %>
-        <%= render 'shared/banner' %>
-      <% end %>
-    </div>
+        <div class="top-container">
+          <%= render 'shared/navbar' %>
+          <%= render 'shared/flashes' %>
+          <% if @banner %>
+            <%= render 'shared/banner' %>
+          <% end %>
+      </div>
+    <% end %>
 
     <div class="main-container">
       <%= yield %>

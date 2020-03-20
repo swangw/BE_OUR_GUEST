@@ -35,13 +35,23 @@
   color: #FFFFFF;
 }
 
+.booking-search-button {
+  color: #868686;
+  border-radius: 3px;
+  padding-top: 2px;
+}
+
+.booking-search-button:hover {
+  color: #303841;
+}
+
 #map_button {
   opacity: 0.8;
-  color: #325C75;
+  color: #868686;
   font-size: 18px;
 }
 
 #map_button:hover {
-  color: black;
+  color: #303841;
   text-decoration: none;
 }

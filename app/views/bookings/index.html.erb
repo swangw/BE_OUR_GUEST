@@ -1,5 +1,5 @@
 <div class="container mt-4">
-<h4>My pending bookings</h4>
+
   <div class="booking-cards">
     <% [@pending_bookings, @confirmed_bookings].each do |bookings| %>
       <% if bookings == @pending_bookings %>
@@ -13,7 +13,7 @@
           <div class="p-5 bd-highlight">
             <h2><%= booking.space.name %></h2>
             <p>Customer name: <%= booking.client_name %></p>
-            <p><%= booking.start_time.strftime('%A, %b %d') %> for <%= (booking.end_time - booking.start_time)/3600 %> hours</p>
+            <p><%= booking.start_time.strftime('%A, %b %d') %> for <%= ((booking.end_time - booking.start_time)/3600).round %> hours</p>
           </div>
           <div class="ml-auto p-5 bd-highlight">
           <% if bookings == @pending_bookings %>

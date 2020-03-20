@@ -50,7 +50,7 @@ import { initSweetalert } from '../plugins/sweetalert';
 
 initSweetalert('#sweet-alert', {
   title: "Confirmation",
-  text: "Confirm Booking",
+  text: "Booking confirmed!",
   icon: "success"
 }, (value) => {
   if (value) {

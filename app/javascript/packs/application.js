@@ -49,8 +49,8 @@ if (startTimeInput) {
 import { initSweetalert } from '../plugins/sweetalert';
 
 initSweetalert('#sweet-alert', {
-  title: "Confirmation",
-  text: "Confirm Booking",
+  title: "YAY!",
+  text: "Booking confirmed",
   icon: "success"
 }, (value) => {
   if (value) {

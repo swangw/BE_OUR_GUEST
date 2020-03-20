@@ -1,6 +1,11 @@
 
   <div class="d-flex justify-space-between align-items-center">
-    <img src='<%= space.images[0] %>' class="popup-img">
+    <% if space.images.empty? %>
+      <%= cl_image_tag(space.photos[0].key, class: "popup-img") %>
+    <% else %>
+      <img src='<%= space.images[0] %>' class="popup-img">
+    <% end %>
+
     <div class=>
       <h5><%= link_to space.name, space %></h5>
       <p><%= space.address %></p>

@@ -1,24 +1,12 @@
 <div class="container">
-<h4>My pending bookings</h4>
   <div class="booking-cards">
-    <% @pending_bookings.each do |booking| %>
-      <div class="card-booking my-3 d-flex bd-highlight mb-3">
-        <img src="<%= booking.space.images[0] %>" />
-        <div class="p-5 bd-highlight">
-          <h2><%= booking.space.name %></h2>
-          <p>Customer name: <%= booking.client_name %></p>
-          <p><%= booking.start_time.strftime('%A, %b %d') %> for <%= (booking.end_time - booking.start_time)/3600 %> hours</p>
-        </div>
-        <div class="ml-auto p-5 bd-highlight">
-          <%= link_to "View details and confirm", booking_path(booking), class: "btn btn-ghost" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-<h4>My confirmed bookings</h4>
-    <div class="booking-cards">
-      <% @confirmed_bookings.each do |booking| %>
+    <% [@pending_bookings, @confirmed_bookings].each do |bookings| %>
+      <% if bookings == @pending_bookings %>
+        <h4>My pending bookings</h4>
+      <% else %>
+        <h4>My confirmed bookings</h4>
+      <% end %>
+      <% bookings.each do |booking| %>
         <div class="card-booking my-3 d-flex bd-highlight mb-3">
           <img src="<%= booking.space.images[0] %>" />
           <div class="p-5 bd-highlight">
@@ -27,10 +15,14 @@
             <p><%= booking.start_time.strftime('%A, %b %d') %> for <%= (booking.end_time - booking.start_time)/3600 %> hours</p>
           </div>
           <div class="ml-auto p-5 bd-highlight">
+          <% if bookings == @pending_bookings %>
+            <%= link_to "View details and confirm", booking_path(booking), class: "btn btn-ghost" %>
+          <% else %>
             <%= link_to "View Details", booking_path(booking), class: "btn btn-ghost" %>
+          <% end %>
           </div>
         </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>

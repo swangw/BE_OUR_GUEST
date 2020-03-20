@@ -46,15 +46,15 @@ if (startTimeInput) {
   })
 };
 
-// initSweetAlertForForm('#new_booking', {
-//   title: "Confirm booking?",
-//   text: "You will be charged ${total_price}",
-//   icon: "info",
-//   buttons: true,
-//   dangerMode: true,
-// }, (value) => {
-//   if (value) {
-//     const link = document.querySelector('#create-link')
-//     link.click();
-//   }
-// });
+import { initSweetalert } from '../plugins/sweetalert';
+
+initSweetalert('#sweet-alert', {
+  title: "Confirmation",
+  text: "Confirm Booking",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#confirm-link');
+    link.click();
+  }
+});

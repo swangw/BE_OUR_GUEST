@@ -10,7 +10,8 @@ class SpacesController < ApplicationController
       {
         lat: space.latitude,
         lng: space.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space }),
+        image_url: 'http://res.cloudinary.com/dmgdx49k6/image/upload/v1584674967/m84cbxrd9owgkdpmutfe.png'
       }
       end
     else
@@ -19,7 +20,8 @@ class SpacesController < ApplicationController
       {
         lat: space.latitude,
         lng: space.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space }),
+        image_url: 'http://res.cloudinary.com/dmgdx49k6/image/upload/v1584674967/m84cbxrd9owgkdpmutfe.png'
       }
       end
     end

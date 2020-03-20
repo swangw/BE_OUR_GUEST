@@ -16,7 +16,6 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
-    // map.scrollZoom.disable();
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -36,3 +35,15 @@ const initMapbox = () => {
 };
 
 export { initMapbox };
+
+map.on('mouseenter', 'places', function(e) {
+  map.getCanvas().style.cursor = 'pointer';
+
+  var coordinates = e.features[0].geometry.coordinates.slice();
+  var description = e.features[0].properties.description;
+});
+
+map.on('mouseleave', 'places', function() {
+  map.getCanvas().style.cursor = '';
+  popup.remove();
+});

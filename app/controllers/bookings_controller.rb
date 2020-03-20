@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
   def index
     @host = Host.find(params[:host_id])
-    @bookings = @host.bookings
+    @confirmed_bookings = @host.bookings.where(confirmed: true)
+    @pending_bookings = @host.bookings.where(confirmed: false)
   end
 
   def create

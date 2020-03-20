@@ -2,7 +2,7 @@
   <% if host_signed_in? %>
     <div class="text-left">
       <h2>Booking Details for <%= @booking.space.name %></h2>
-      <ul class="mt-4 list-group list-group-flush">
+      <ul class="mt-4 list-group list-group-flush" style="padding-bottom: 8px">
         <li class="list-group-item"><i class="fas fa-user"></i> Customer name: <%= @booking.client_name %></li>
         <li class="list-group-item"><i class="fas fa-envelope"></i> Customer email: <%= @booking.client_email %></li>
         <li class="list-group-item"><i class="far fa-calendar-alt"></i> Date booked: <%= @booking.start_time.strftime('%A, %b %d') %></li>

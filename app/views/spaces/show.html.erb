@@ -118,7 +118,7 @@
 
     <div class="col-md-4 col-sm-12">
       <div class="booking-form p-3 mt-4">
-        <p>Book this place ($<%= @space.price_per_hour %>/hour)</p>
+        <p>Book this space ($<%= @space.price_per_hour %>/hour)</p>
         <%= simple_form_for [@space, @booking] do |f| %>
           <% if @booking.errors.any? %>
             <div class="errors-container text-danger">

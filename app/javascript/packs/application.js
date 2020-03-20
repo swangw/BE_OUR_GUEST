@@ -8,12 +8,10 @@ import { initMapbox } from '../plugins/mapbox';
 import { initAutocomplete } from '../plugins/autocomplete';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import { loadMap } from '../components/map'
 
 
 initMapbox();
 initAutocomplete();
-loadMap();
 
 const startTimeInput = document.getElementById('booking_start_time');
 const endTimeInput = document.getElementById('booking_end_time');

@@ -23,6 +23,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def confirmed!
+    @booking.confirmed
+  end
+
   private
 
   def booking_params

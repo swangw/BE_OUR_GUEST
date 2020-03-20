@@ -10,6 +10,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
+        <%= form_tag(bookings_search_path, method: "get") do |f| %>
+          <%= label_tag(:q, "Booking ID:") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Host Login / Signup", new_host_session_path, class: "nav-link" %>
       </li>
     </ul>

@@ -1,14 +1,14 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-
-  const fitMapToMarkers = (map, markers) => {
-    const bounds = new mapboxgl.LngLatBounds();
-    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-  };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -29,10 +29,26 @@ const initMapbox = () => {
       element.style.width = '25px';
       element.style.height = '25px';
 
-      new mapboxgl.Marker(element)
+      const markerElement = new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
+
+      const markerDiv = markerElement.getElement();
+
+      // TODO: find a way to keep the popup there if you click on it
+      markerDiv.addEventListener('mouseenter', () => markerElement.togglePopup());
+      // markerDiv.addEventListener('mouseleave', () => markerElement.togglePopup());
+      // markerDiv.addEventListener('click', () => {
+      //   popup.toggleClassName('popup-click');
+      // });
+      // markerDiv.addEventListener('mouseleave', () => {
+      //   const popupMarker = markerElement.getPopup();
+      //   const popupElement = popupMarker.getElement();
+      //   if (!popupElement.classList.contains('popup-click')) {
+      //     popupMarker.remove();
+      //   }
+      // });
     });
 
     fitMapToMarkers(map, markers);
@@ -44,14 +60,3 @@ const initMapbox = () => {
 
 export { initMapbox };
 
-// map.on('mouseenter', 'places', function(e) {
-//   map.getCanvas().style.cursor = 'pointer';
-
-//   var coordinates = e.features[0].geometry.coordinates.slice();
-//   var description = e.features[0].properties.description;
-// });
-
-// map.on('mouseleave', 'places', function() {
-//   map.getCanvas().style.cursor = '';
-//   popup.remove();
-// });

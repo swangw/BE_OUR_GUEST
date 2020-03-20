@@ -2,27 +2,22 @@
   <h2>Upcoming Bookings</h2>
 
   <div class="booking-cards">
-    <% [@bookingsStarting, @bookingsAfter].each do |bookings| %>
-      <% bookings.each do |booking| %>
-        <% if bookings == @bookingsStarting %>
-          <div class="card-booking card-booking-starting my-3 d-flex bd-highlight mb-3">
-        <% else %>
-          <div class="card-booking my-3 d-flex bd-highlight mb-3">
-        <% end %>
-            <img src="<%= booking.space.images[0] %>" />
-            <div class="p-5 bd-highlight">
-              <h2><%= booking.space.name %></h2>
-              <p>Customer name: <%= booking.client_name %></p>
-            </div>
-            <div class="ml-auto p-5 bd-highlight">
-              <%= link_to "View Details", booking_path(booking), class: "btn btn-ghost" %>
-            </div>
-          </div>
-      <% end %>
+    <% @bookings.each do |booking| %>
+      <div class="card-booking my-3 d-flex bd-highlight mb-3">
+        <img src="<%= booking.space.images[0] %>" />
+        <div class="p-5 bd-highlight">
+          <h2><%= booking.space.name %></h2>
+          <p>Customer name: <%= booking.client_name %></p>
+        </div>
+        <div class="ml-auto p-5 bd-highlight">
+          <% if booking.confirmed %>
+            <%= link_to "Confirmed", root_path, class: "btn btn-ghost" %>
+          <% else %>
+            <%= link_to "Pending", root_path, class: "btn btn-ghost" %>
+          <% end %>
+          <%= link_to "View Details", booking_path(booking), class: "btn btn-ghost" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
-
-<!-- <p>Date booked: <%#= booking.start_time.strftime('%A, %b %d') %></p> -->
-<!-- <p>Start time: <%#= booking.start_time.strftime('%I:%M %p') %></p> -->
-<!-- <p>End time: <%#= booking.end_time.strftime('%I:%M %p') %></p> -->

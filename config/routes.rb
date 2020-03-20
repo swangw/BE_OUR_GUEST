@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:show]
+  resources :bookings, only: [:show, :destroy] do
+    resource :confirmation, only: [:edit, :update]
+  end
 
   resources :hosts, only: [:new, :create] do
     resources :spaces

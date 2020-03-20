@@ -28,6 +28,15 @@ class BookingsController < ApplicationController
     redirect_to host_bookings_path(@booking.space.host)
   end
 
+  def search
+    if Booking.exists?(id: params[:q])
+      @booking = Booking.find(params[:q])
+      redirect_to booking_path(@booking)
+    else
+      redirect_to root_path, notice: "Booking not found"
+    end
+  end
+
   private
 
   def booking_params

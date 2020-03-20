@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :hosts
   root to: 'spaces#index'
+
+  get 'bookings/search', to: 'bookings#search'
+
   resources :spaces, only: [:show] do
     resources :bookings, only: [:create]
   end

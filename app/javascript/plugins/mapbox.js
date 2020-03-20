@@ -36,14 +36,14 @@ const initMapbox = () => {
 
 export { initMapbox };
 
-map.on('mouseenter', 'places', function(e) {
-  map.getCanvas().style.cursor = 'pointer';
+// map.on('mouseenter', 'places', function(e) {
+//   map.getCanvas().style.cursor = 'pointer';
 
-  var coordinates = e.features[0].geometry.coordinates.slice();
-  var description = e.features[0].properties.description;
-});
+//   var coordinates = e.features[0].geometry.coordinates.slice();
+//   var description = e.features[0].properties.description;
+// });
 
-map.on('mouseleave', 'places', function() {
-  map.getCanvas().style.cursor = '';
-  popup.remove();
-});
+// map.on('mouseleave', 'places', function() {
+//   map.getCanvas().style.cursor = '';
+//   popup.remove();
+// });

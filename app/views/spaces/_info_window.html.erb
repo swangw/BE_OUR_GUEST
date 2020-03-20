@@ -1,4 +1,9 @@
-<div>
-  <h2><%= link_to space.name, space %></h2>
-  <p><%= space.address %></p>
-</div>
+
+  <div class="d-flex justify-space-between align-items-center">
+    <img src='<%= space.images[0] %>' class="popup-img">
+    <div class=>
+      <h5><%= link_to space.name, space %></h5>
+      <p><%= space.address %></p>
+    </div>
+  </div>
+

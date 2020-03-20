@@ -13,12 +13,16 @@
     </div>
   <% else %>
     <div class="text-center">
-      <h2>Your booking is confirmed!</h2>
+      <% if @booking.confirmed %>
+        <h2>Your booking is confirmed!</h2>
+      <% else %>
+        <h2>Your booking is not yet confirmed.</h2>
+        <p>You will receive an email when the booking is confirmed.</p>
+      <% end %>
       <img src='https://source.unsplash.com/1600x900/?hotel-lounge <%= @booking.space.id %>' class="confirmed-booking-img" alt="hotel-lounge">
       <h3>You have booked <strong><%= @booking.space.name %></strong></h3>
       <h3>for <strong><%= @booking.start_time.strftime('%A, %b %d') %></strong> from <strong><%= @booking.start_time.strftime('%I:%M %p') %></strong> till <strong><%= @booking.end_time.strftime('%I:%M %p') %></strong></h3>
       <h5 class="my-3">You will be charged $<%= ((@booking.end_time - @booking.start_time) / 3600 * @booking.space.price_per_hour).round %>.</h5>
-      <p class="mb-0">A confirmation email and invoice will be sent to you shortly.</p>
       <p>Thank you for using <em>Be our guest</em>, <%= @booking.client_name %> <i class="far fa-laugh-beam"></i></p>
     </div>
   <% end %>

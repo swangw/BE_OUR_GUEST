@@ -26,6 +26,7 @@
         <h2>Your booking is confirmed!</h2>
       <% else %>
         <h2>Your booking is not yet confirmed.</h2>
+        <h3>Booking ID: <%= @booking.id %> </h3>
         <p>You will receive an email when the booking is confirmed.</p>
       <% end %>
       <img src='https://source.unsplash.com/1600x900/?hotel-lounge <%= @booking.space.id %>' class="confirmed-booking-img" alt="hotel-lounge">
